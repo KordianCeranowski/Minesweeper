@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# comment
+# class for single field of minefield
 class Field
   attr_accessor :has_mine, :sign, :hidden
   def initialize

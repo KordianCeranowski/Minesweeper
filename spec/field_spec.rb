@@ -4,8 +4,8 @@ require 'field'
 
 RSpec.describe Field do
   describe '.initialize' do
-    context 'when creating new object has no mine' do
-      field = Field.new()
+    it('initializes with no mine') do
+      field = Field.new
       expect(field.has_mine).to be false
     end
   end

@@ -10,10 +10,14 @@ RSpec.describe Minefield do
     end
   end
   describe '.fill_map_with_fields' do
-    it('creates hash with fields') do
+    it('creates board as a Hash') do
       minefield = Minefield.new(10, 10, 15)
       minefield.fill_map_with_fields
       expect(minefield.board.class).to be Hash
+    end
+    it('makes board of right size') do
+      minefield = Minefield.new(10, 10, 15)
+      minefield.fill_map_with_fields
       expect(minefield.board.size).to eq 100
     end
   end

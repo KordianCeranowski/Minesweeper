@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require 'field'
+require 'cell'
 
-RSpec.describe Field do
+RSpec.describe Cell do
   describe '.initialize' do
     it('initializes with no mine') do
-      field = Field.new
-      expect(field.has_mine).to be false
+      cell = Cell.new
+      expect(cell.has_mine).to be false
     end
   end
 end

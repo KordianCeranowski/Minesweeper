@@ -9,19 +9,22 @@ class Cell
     @count_of_mines_around = -1
   end
 
-  def plant_bomb
-    @has_mine = true
-  end
 
-  def show
-    @hidden = false
-  end
+  # test
+  
+  # def plant_bomb
+  #   @has_mine = true
+  # end
 
-  def hidden?
-    hidden
-  end
+  # def show
+  #   @hidden = false
+  # end
 
-  def has_mine?
-    has_mine
-  end
+  # def hidden?
+  #   hidden
+  # end
+
+  # def has_mine?
+  #   has_mine
+  # end
 end

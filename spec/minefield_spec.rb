@@ -3,6 +3,7 @@
 require 'minefield'
 
 RSpec.describe Minefield do
+  
   describe '.initialize' do
     it('initializes with right mine count') do
       minefield = Minefield.new(10, 10, 15)
@@ -15,7 +16,7 @@ RSpec.describe Minefield do
       minefield.fill_board_with_cells
       expect(minefield.board.class).to be Hash
     end
-    it('makes board of right size') do
+    it('makes board of a right size') do
       minefield = Minefield.new(10, 10, 15)
       minefield.fill_board_with_cells
       expect(minefield.board.size).to eq 100
@@ -28,4 +29,25 @@ RSpec.describe Minefield do
       minefield.randomly_plant_bombs(0, 0)
     end
   end
+
+  describe '.uncover' do
+    it 'changes @game_lost to true after unocovering cell with bomb by mocking cell' do
+      minefield = Minefield.new(10, 10, 15)
+
+      expect(minefield.game_lost).to be false
+
+      cell = instance_double('Cell')
+      allow(cell).to receive(:show)
+      allow(cell).to receive(:has_mine?).and_return(true)
+
+      coordinates = [1, 1]
+
+      minefield.board[[1, 1]] = cell
+
+      minefield.uncover(coordinates)
+
+      expect(minefield.game_lost).to be true
+    end
+  end
+
 end

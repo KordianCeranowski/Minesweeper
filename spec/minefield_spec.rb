@@ -43,6 +43,33 @@ RSpec.describe Minefield do
     end
   end
 
+  describe '.count_mines' do
+    it 'sets @count_of_mines_around to the right value' do
+      minefield = Minefield.new(3, 3, 0)
+      minefield.fill_board_with_cells
+      minefield.fill_board_with_zeroes
+
+      minefield.board[[0, 0]].plant_bomb
+      minefield.board[[2, 2]].plant_bomb
+
+      minefield.count_mines
+
+      (0..2).each do |row|
+        (0..2).each do |col|
+          if (row == 0 && col == 0) || (row == 2 && col == 2)
+            expect(minefield.board[[row, col]].count_of_mines_around).to eq 9
+          elsif (row == 0 && col == 2) || (row == 2 && col == 0)
+            expect(minefield.board[[row, col]].count_of_mines_around).to eq 0
+          elsif row == 1 and col == 1
+            expect(minefield.board[[row, col]].count_of_mines_around).to eq 2
+          else
+            expect(minefield.board[[row, col]].count_of_mines_around).to eq 1
+          end
+        end
+      end
+    end
+  end
+
   describe '.uncover' do
     it 'changes @game_lost to true after unocovering cell with bomb by mocking cell' do
       minefield = Minefield.new(10, 10, 15)

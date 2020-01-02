@@ -102,17 +102,27 @@ RSpec.describe Minefield do
     context 'before choosing a cell' do
       it 'prints empty board' do
         expect { minefield.print_board }
-        .to output("  A B C\nA _ _ _ \nB _ _ _ \nC _ _ _ \n")
-        .to_stdout
+          .to output("  A B C\nA _ _ _ \nB _ _ _ \nC _ _ _ \n")
+          .to_stdout
       end
     end
     context 'after choosing a cell' do
       it 'shows number on this cell' do
         minefield.uncover([1, 1])
         expect { minefield.print_board }
-        .to output("  A B C\nA _ _ _ \nB _ 2 _ \nC _ _ _ \n")
-        .to_stdout
+          .to output("  A B C\nA _ _ _ \nB _ 2 _ \nC _ _ _ \n")
+          .to_stdout
       end
+    end
+  end
+
+  describe '.print_empty_board' do
+    it 'prints empty board' do
+      expect {
+        Minefield.new(4, 4, 4).print_empty_board
+      }
+        .to output("  A B C D\nA _ _ _ _ \nB _ _ _ _ \nC _ _ _ _ \nD _ _ _ _ \n")
+        .to_stdout
     end
   end
 

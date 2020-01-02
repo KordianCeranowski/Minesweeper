@@ -14,13 +14,13 @@ class Minefield
     @board = Hash.new(Cell.new)
   end
 
-#   # runs all functions needed to starting a game
-#   def prepare_board(excepted_cell)
-#     fill_board_with_cells
-#     randomly_plant_bombs(excepted_cell[0], excepted_cell[1])
-#     fill_board_with_zeroes
-#     count_mines
-#   end
+  # # runs all functions needed to starting a game
+  # def prepare_board(excepted_cell)
+  #   fill_board_with_cells
+  #   randomly_plant_bombs(excepted_cell[0], excepted_cell[1])
+  #   fill_board_with_zeroes
+  #   count_mines
+  # end
 
   # sets a cell for every coordinate
   def fill_board_with_cells
@@ -48,16 +48,17 @@ class Minefield
     end
   end
 
-#   # sets @count_of_mines_around to zero for all cells in board
-#   def fill_board_with_zeroes
-#     (1..@row_count).each do |row|
-#       (1..@col_count).each do |col|
-#         unless @board[[row, col]].has_mine?
-#           @board[[row, col]].count_of_mines_around = 0
-#         end
-#       end
-#     end
-#   end
+  # sets @count_of_mines_around to zero for all cells in board
+  def fill_board_with_zeroes
+    (0..@row_count).each do |row|
+      (0..@col_count).each do |col|
+        unless @board[[row, col]].has_mine?
+          @board[[row, col]].count_of_mines_around = 0
+        end
+      end
+    end
+  end
+
 
 #   # counts how many cells around selected cell has a mine
 #   def count_mines_around_cell(row, col)

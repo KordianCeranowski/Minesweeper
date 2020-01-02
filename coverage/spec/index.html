@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-01-02T17:30:47+01:00">2020-01-02T17:30:47+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-01-02T19:38:52+01:00">2020-01-02T19:38:52+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         33.07
+         44.5
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>2</b> files in total.
-    <b>44</b> relevant lines. 
-    <span class="green"><b>44</b> lines covered</span> and
+    <b>49</b> relevant lines. 
+    <span class="green"><b>49</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -57,17 +57,17 @@
         <td>15</td>
         <td>15</td>
         <td>0</td>
-        <td>65.3</td>
+        <td>92.1</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#0f268837128d822af587b7bb2c1a08cb71c8f568" class="src_link" title="lib/minefield.rb">lib/minefield.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>184</td>
-        <td>29</td>
-        <td>29</td>
+        <td>185</td>
+        <td>34</td>
+        <td>34</td>
         <td>0</td>
-        <td>16.4</td>
+        <td>23.5</td>
       </tr>
       
     </tbody>
@@ -136,20 +136,20 @@
           <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="covered" data-hits="310" data-linenumber="7">
-          <span class="hits">310</span>
+        <li class="covered" data-hits="411" data-linenumber="7">
+          <span class="hits">411</span>
           
           <code class="ruby">    @has_mine = false</code>
         </li>
       
-        <li class="covered" data-hits="310" data-linenumber="8">
-          <span class="hits">310</span>
+        <li class="covered" data-hits="411" data-linenumber="8">
+          <span class="hits">411</span>
           
           <code class="ruby">    @hidden = true</code>
         </li>
       
-        <li class="covered" data-hits="310" data-linenumber="9">
-          <span class="hits">310</span>
+        <li class="covered" data-hits="411" data-linenumber="9">
+          <span class="hits">411</span>
           
           <code class="ruby">    @count_of_mines_around = -1</code>
         </li>
@@ -250,8 +250,8 @@
           <code class="ruby">  def has_mine?</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="26">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="102" data-linenumber="26">
+          <span class="hits">102</span>
           
           <code class="ruby">    has_mine</code>
         </li>
@@ -278,8 +278,8 @@
     <h3>lib/minefield.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>29</b> relevant lines. 
-      <span class="green"><b>29</b> lines covered</span> and
+      <b>34</b> relevant lines. 
+      <span class="green"><b>34</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -341,32 +341,32 @@
           <code class="ruby">  def initialize(col_count, row_count, mine_percent)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="10">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="10">
+          <span class="hits">6</span>
           
           <code class="ruby">    @col_count = col_count.to_i - 1</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="11">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="11">
+          <span class="hits">6</span>
           
           <code class="ruby">    @row_count = row_count.to_i - 1</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="12">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="12">
+          <span class="hits">6</span>
           
           <code class="ruby">    @mine_count = col_count.to_i * row_count.to_i * mine_percent.to_i * 0.01</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="13">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="13">
+          <span class="hits">6</span>
           
           <code class="ruby">    @game_lost = false</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="14">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="14">
+          <span class="hits">6</span>
           
           <code class="ruby">    @board = Hash.new(Cell.new)</code>
         </li>
@@ -386,43 +386,43 @@
         <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby">#   # runs all functions needed to starting a game</code>
+          <code class="ruby">  # # runs all functions needed to starting a game</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">#   def prepare_board(excepted_cell)</code>
+          <code class="ruby">  # def prepare_board(excepted_cell)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">#     fill_board_with_cells</code>
+          <code class="ruby">  #   fill_board_with_cells</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">#     randomly_plant_bombs(excepted_cell[0], excepted_cell[1])</code>
+          <code class="ruby">  #   randomly_plant_bombs(excepted_cell[0], excepted_cell[1])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby">#     fill_board_with_zeroes</code>
+          <code class="ruby">  #   fill_board_with_zeroes</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby">#     count_mines</code>
+          <code class="ruby">  #   count_mines</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">#   end</code>
+          <code class="ruby">  # end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
@@ -443,20 +443,20 @@
           <code class="ruby">  def fill_board_with_cells</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="27">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="27">
+          <span class="hits">4</span>
           
           <code class="ruby">    (0..@row_count).each do |row|</code>
         </li>
       
-        <li class="covered" data-hits="30" data-linenumber="28">
-          <span class="hits">30</span>
+        <li class="covered" data-hits="40" data-linenumber="28">
+          <span class="hits">40</span>
           
           <code class="ruby">      (0..@col_count).each do |col|</code>
         </li>
       
-        <li class="covered" data-hits="300" data-linenumber="29">
-          <span class="hits">300</span>
+        <li class="covered" data-hits="400" data-linenumber="29">
+          <span class="hits">400</span>
           
           <code class="ruby">        @board[[row, col]] = Cell.new</code>
         </li>
@@ -521,20 +521,20 @@
           <code class="ruby">    while bombs_planted &lt; mine_count</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="40">
-          <span class="hits">19</span>
+        <li class="covered" data-hits="17" data-linenumber="40">
+          <span class="hits">17</span>
           
           <code class="ruby">      rand_row = rand(@row_count)</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="41">
-          <span class="hits">19</span>
+        <li class="covered" data-hits="17" data-linenumber="41">
+          <span class="hits">17</span>
           
           <code class="ruby">      rand_col = rand(@col_count)</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="42">
-          <span class="hits">19</span>
+        <li class="covered" data-hits="17" data-linenumber="42">
+          <span class="hits">17</span>
           
           <code class="ruby">      next if rand_row == excepted_row &amp;&amp; rand_col == excepted_col</code>
         </li>
@@ -590,61 +590,61 @@
         <li class="never" data-hits="" data-linenumber="51">
           
           
-          <code class="ruby">#   # sets @count_of_mines_around to zero for all cells in board</code>
+          <code class="ruby">  # sets @count_of_mines_around to zero for all cells in board</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="covered" data-hits="1" data-linenumber="52">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">#   def fill_board_with_zeroes</code>
+          <code class="ruby">  def fill_board_with_zeroes</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="covered" data-hits="1" data-linenumber="53">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">#     (1..@row_count).each do |row|</code>
+          <code class="ruby">    (0..@row_count).each do |row|</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="covered" data-hits="10" data-linenumber="54">
+          <span class="hits">10</span>
           
-          
-          <code class="ruby">#       (1..@col_count).each do |col|</code>
+          <code class="ruby">      (0..@col_count).each do |col|</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="covered" data-hits="100" data-linenumber="55">
+          <span class="hits">100</span>
           
-          
-          <code class="ruby">#         unless @board[[row, col]].has_mine?</code>
+          <code class="ruby">        unless @board[[row, col]].has_mine?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="covered" data-hits="100" data-linenumber="56">
+          <span class="hits">100</span>
           
-          
-          <code class="ruby">#           @board[[row, col]].count_of_mines_around = 0</code>
+          <code class="ruby">          @board[[row, col]].count_of_mines_around = 0</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="57">
           
           
-          <code class="ruby">#         end</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="58">
           
           
-          <code class="ruby">#       end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="59">
           
           
-          <code class="ruby">#     end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="60">
           
           
-          <code class="ruby">#   end</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="61">
@@ -656,736 +656,742 @@
         <li class="never" data-hits="" data-linenumber="62">
           
           
-          <code class="ruby">#   # counts how many cells around selected cell has a mine</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="63">
           
           
-          <code class="ruby">#   def count_mines_around_cell(row, col)</code>
+          <code class="ruby">#   # counts how many cells around selected cell has a mine</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="64">
           
           
-          <code class="ruby">#     sum = 0</code>
+          <code class="ruby">#   def count_mines_around_cell(row, col)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="65">
           
           
-          <code class="ruby">#     (-1..1).each do |curr_row|</code>
+          <code class="ruby">#     sum = 0</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="66">
           
           
-          <code class="ruby">#       (-1..1).each do |curr_col|</code>
+          <code class="ruby">#     (-1..1).each do |curr_row|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="67">
           
           
-          <code class="ruby">#         next if curr_row.zero? &amp;&amp; curr_col.zero?</code>
+          <code class="ruby">#       (-1..1).each do |curr_col|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="68">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">#         next if curr_row.zero? &amp;&amp; curr_col.zero?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="69">
           
           
-          <code class="ruby">#         if @board[[row + curr_row, col + curr_col]].has_mine?</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="70">
           
           
-          <code class="ruby">#           sum += 1</code>
+          <code class="ruby">#         if @board[[row + curr_row, col + curr_col]].has_mine?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="71">
           
           
-          <code class="ruby">#         end</code>
+          <code class="ruby">#           sum += 1</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="72">
           
           
-          <code class="ruby">#       end</code>
+          <code class="ruby">#         end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="73">
           
           
-          <code class="ruby">#     end</code>
+          <code class="ruby">#       end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="74">
           
           
-          <code class="ruby">#     sum</code>
+          <code class="ruby">#     end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="75">
           
           
-          <code class="ruby">#   end</code>
+          <code class="ruby">#     sum</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="76">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">#   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="77">
           
           
-          <code class="ruby">#   # sets @count_of_mines_around for each cell in board</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="78">
           
           
-          <code class="ruby">#   def count_mines</code>
+          <code class="ruby">#   # sets @count_of_mines_around for each cell in board</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="79">
           
           
-          <code class="ruby">#     (0..@row_count).each do |row|</code>
+          <code class="ruby">#   def count_mines</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="80">
           
           
-          <code class="ruby">#       (0..@col_count).each do |col|</code>
+          <code class="ruby">#     (0..@row_count).each do |row|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="81">
           
           
-          <code class="ruby">#         unless @board[[row, col]].has_mine</code>
+          <code class="ruby">#       (0..@col_count).each do |col|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="82">
           
           
-          <code class="ruby">#           @board[[row, col]].count_of_mines_around = count_mines_around_cell(row, col)</code>
+          <code class="ruby">#         unless @board[[row, col]].has_mine</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="83">
           
           
-          <code class="ruby">#         end</code>
+          <code class="ruby">#           @board[[row, col]].count_of_mines_around = count_mines_around_cell(row, col)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="84">
           
           
-          <code class="ruby">#       end</code>
+          <code class="ruby">#         end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="85">
           
           
-          <code class="ruby">#     end</code>
+          <code class="ruby">#       end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="86">
           
           
-          <code class="ruby">#   end</code>
+          <code class="ruby">#     end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="87">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">#   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="88">
           
           
-          <code class="ruby">#   # Prints board during game duration</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="89">
           
           
-          <code class="ruby">#   def print_board</code>
+          <code class="ruby">#   # Prints board during game duration</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="90">
           
           
-          <code class="ruby">#     print(&#39;  &#39; + (10...36).map { |i| i.to_s 36 }.map(&amp;:upcase)[0..col_count].product([&#39; &#39;]).flatten(1)[0...-1].join)</code>
+          <code class="ruby">#   def print_board</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="91">
           
           
-          <code class="ruby">#     print(&quot;\n&quot;)</code>
+          <code class="ruby">#     print(&#39;  &#39; + (10...36).map { |i| i.to_s 36 }.map(&amp;:upcase)[0..col_count].product([&#39; &#39;]).flatten(1)[0...-1].join)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="92">
           
           
-          <code class="ruby">#     (0..@row_count).each do |row|</code>
+          <code class="ruby">#     print(&quot;\n&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="93">
           
           
-          <code class="ruby">#       print (10...36).map{ |i| i.to_s 36}.map(&amp;:upcase)[row] + &#39; &#39;</code>
+          <code class="ruby">#     (0..@row_count).each do |row|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="94">
           
           
-          <code class="ruby">#       (0..@col_count).each do |col|</code>
+          <code class="ruby">#       print (10...36).map{ |i| i.to_s 36}.map(&amp;:upcase)[row] + &#39; &#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="95">
           
           
-          <code class="ruby">#         if @board[[row, col]].hidden</code>
+          <code class="ruby">#       (0..@col_count).each do |col|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="96">
           
           
-          <code class="ruby">#           print(&#39;_ &#39;)</code>
+          <code class="ruby">#         if @board[[row, col]].hidden</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="97">
           
           
-          <code class="ruby">#         else</code>
+          <code class="ruby">#           print(&#39;_ &#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="98">
           
           
-          <code class="ruby">#           print(@board[[row, col]].count_of_mines_around.to_s + &#39; &#39;)</code>
+          <code class="ruby">#         else</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="99">
           
           
-          <code class="ruby">#         end</code>
+          <code class="ruby">#           print(@board[[row, col]].count_of_mines_around.to_s + &#39; &#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="100">
           
           
-          <code class="ruby">#       end</code>
+          <code class="ruby">#         end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="101">
           
           
-          <code class="ruby">#       print(&quot;\n&quot;)</code>
+          <code class="ruby">#       end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="102">
           
           
-          <code class="ruby">#     end</code>
+          <code class="ruby">#       print(&quot;\n&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="103">
           
           
-          <code class="ruby">#   end</code>
+          <code class="ruby">#     end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="104">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">#   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="105">
           
           
-          <code class="ruby">#   # first printing </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="106">
           
           
-          <code class="ruby">#   # needed because until first cell selection there is no cell on board</code>
+          <code class="ruby">#   # first printing </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="107">
           
           
-          <code class="ruby">#   def print_empty_board</code>
+          <code class="ruby">#   # needed because until first cell selection there is no cell on board</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="108">
           
           
-          <code class="ruby">#     print(&#39;  &#39; + (10...36).map { |i| i.to_s 36 }.map(&amp;:upcase)[0..col_count].product([&#39; &#39;]).flatten(1)[0...-1].join)</code>
+          <code class="ruby">#   def print_empty_board</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="109">
           
           
-          <code class="ruby">#     print(&quot;\n&quot;)</code>
+          <code class="ruby">#     print(&#39;  &#39; + (10...36).map { |i| i.to_s 36 }.map(&amp;:upcase)[0..col_count].product([&#39; &#39;]).flatten(1)[0...-1].join)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="110">
           
           
-          <code class="ruby">#     (0..@row_count).each do |row|</code>
+          <code class="ruby">#     print(&quot;\n&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="111">
           
           
-          <code class="ruby">#       print((10...36).map{ |i| i.to_s 36}.map(&amp;:upcase)[row] + &#39; &#39;)</code>
+          <code class="ruby">#     (0..@row_count).each do |row|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="112">
           
           
-          <code class="ruby">#       (0..@col_count).each do</code>
+          <code class="ruby">#       print((10...36).map{ |i| i.to_s 36}.map(&amp;:upcase)[row] + &#39; &#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="113">
           
           
-          <code class="ruby">#         print(&#39;_ &#39;)</code>
+          <code class="ruby">#       (0..@col_count).each do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="114">
           
           
-          <code class="ruby">#       end</code>
+          <code class="ruby">#         print(&#39;_ &#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="115">
           
           
-          <code class="ruby">#       print(&quot;\n&quot;)</code>
+          <code class="ruby">#       end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="116">
           
           
-          <code class="ruby">#     end</code>
+          <code class="ruby">#       print(&quot;\n&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="117">
           
           
-          <code class="ruby">#   end</code>
+          <code class="ruby">#     end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="118">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">#   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="119">
           
           
-          <code class="ruby">#   # checks one of 8 cells neighbours is a visible zero</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="120">
           
           
-          <code class="ruby">#   def neighbouring_visible_zero(row, col)</code>
+          <code class="ruby">#   # checks one of 8 cells neighbours is a visible zero</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="121">
           
           
-          <code class="ruby">#     (-1..1).each do |row_diff|</code>
+          <code class="ruby">#   def neighbouring_visible_zero(row, col)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="122">
           
           
-          <code class="ruby">#       (-1..1).each do |col_diff|</code>
+          <code class="ruby">#     (-1..1).each do |row_diff|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="123">
           
           
-          <code class="ruby">#         next if row_diff.zero? &amp;&amp; col_diff.zero?</code>
+          <code class="ruby">#       (-1..1).each do |col_diff|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="124">
           
           
-          <code class="ruby">#         if !@board[[row + row_diff, col + col_diff]].hidden? &amp;&amp; @board[[row + row_diff, col + col_diff]].count_of_mines_around.zero?</code>
+          <code class="ruby">#         next if row_diff.zero? &amp;&amp; col_diff.zero?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="125">
           
           
-          <code class="ruby">#           return true</code>
+          <code class="ruby">#         if !@board[[row + row_diff, col + col_diff]].hidden? &amp;&amp; @board[[row + row_diff, col + col_diff]].count_of_mines_around.zero?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="126">
           
           
-          <code class="ruby">#         end</code>
+          <code class="ruby">#           return true</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="127">
           
           
-          <code class="ruby">#       end</code>
+          <code class="ruby">#         end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="128">
           
           
-          <code class="ruby">#     end</code>
+          <code class="ruby">#       end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="129">
           
           
-          <code class="ruby">#     false</code>
+          <code class="ruby">#     end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="130">
           
           
-          <code class="ruby">#   end</code>
+          <code class="ruby">#     false</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="131">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">#   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="132">
           
           
-          <code class="ruby">#   # shows all zeroes that should bee visible after uncovering new cell</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="133">
           
           
-          <code class="ruby">#   def refresh_visibility</code>
+          <code class="ruby">#   # shows all zeroes that should bee visible after uncovering new cell</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="134">
           
           
-          <code class="ruby">#     something_changed = true</code>
+          <code class="ruby">#   def refresh_visibility</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="135">
           
           
-          <code class="ruby">#     while something_changed</code>
+          <code class="ruby">#     something_changed = true</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="136">
           
           
-          <code class="ruby">#       something_changed = false</code>
+          <code class="ruby">#     while something_changed</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="137">
           
           
-          <code class="ruby">#       (0..@row_count).each do |row|</code>
+          <code class="ruby">#       something_changed = false</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="138">
           
           
-          <code class="ruby">#         (0..@col_count).each do |col|</code>
+          <code class="ruby">#       (0..@row_count).each do |row|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="139">
           
           
-          <code class="ruby">#           next unless @board[[row, col]].hidden?</code>
+          <code class="ruby">#         (0..@col_count).each do |col|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="140">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">#           next unless @board[[row, col]].hidden?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="141">
           
           
-          <code class="ruby">#           if neighbouring_visible_zero(row, col)</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="142">
           
           
-          <code class="ruby">#             @board[[row, col]].show</code>
+          <code class="ruby">#           if neighbouring_visible_zero(row, col)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="143">
           
           
-          <code class="ruby">#             something_changed = true</code>
+          <code class="ruby">#             @board[[row, col]].show</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="144">
           
           
-          <code class="ruby">#           end</code>
+          <code class="ruby">#             something_changed = true</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="145">
           
           
-          <code class="ruby">#         end</code>
+          <code class="ruby">#           end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="146">
           
           
-          <code class="ruby">#       end</code>
+          <code class="ruby">#         end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="147">
           
           
-          <code class="ruby">#     end</code>
+          <code class="ruby">#       end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="148">
           
           
-          <code class="ruby">#   end</code>
+          <code class="ruby">#     end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="149">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">#   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="150">
           
           
-          <code class="ruby">  # unhides the chosen cell, then updates game_lost flag</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="151">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="151">
           
-          <code class="ruby">  def uncover(cell)</code>
+          
+          <code class="ruby">  # unhides the chosen cell, then updates game_lost flag</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="152">
           <span class="hits">1</span>
           
-          <code class="ruby">    @board[[cell[0], cell[1]]].show</code>
+          <code class="ruby">  def uncover(cell)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="153">
           <span class="hits">1</span>
           
-          <code class="ruby">    check_for_loosing(cell)</code>
+          <code class="ruby">    @board[[cell[0], cell[1]]].show</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="154">
+        <li class="covered" data-hits="1" data-linenumber="154">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    check_for_loosing(cell)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="155">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="156">
           
           
-          <code class="ruby">  # sets game_lost flag if one of mines is not hidden</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="157">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="157">
           
-          <code class="ruby">  def check_for_loosing(cell)</code>
+          
+          <code class="ruby">  # sets game_lost flag if one of mines is not hidden</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="158">
           <span class="hits">1</span>
           
-          <code class="ruby">    if @board[[cell[0], cell[1]]].has_mine?</code>
+          <code class="ruby">  def check_for_loosing(cell)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="159">
           <span class="hits">1</span>
           
-          <code class="ruby">      @game_lost = true</code>
+          <code class="ruby">    if @board[[cell[0], cell[1]]].has_mine?</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="160">
+        <li class="covered" data-hits="1" data-linenumber="160">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      @game_lost = true</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="161">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="162">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="163">
           
           
-          <code class="ruby">#   # shows mines after loosing a game</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="164">
           
           
-          <code class="ruby">#   def print_lost_board(cell)</code>
+          <code class="ruby">#   # shows mines after loosing a game</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="165">
           
           
-          <code class="ruby">#     print &#39;  &#39; + (10...36).map { |i| i.to_s 36 }.map(&amp;:upcase)[0..col_count].product([&#39; &#39;]).flatten(1)[0...-1].join</code>
+          <code class="ruby">#   def print_lost_board(cell)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="166">
           
           
-          <code class="ruby">#     print(&quot;\n&quot;)</code>
+          <code class="ruby">#     print &#39;  &#39; + (10...36).map { |i| i.to_s 36 }.map(&amp;:upcase)[0..col_count].product([&#39; &#39;]).flatten(1)[0...-1].join</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="167">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">#     print(&quot;\n&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="168">
           
           
-          <code class="ruby">#     (0..@row_count).each do |row|</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="169">
           
           
-          <code class="ruby">#       print((10...36).map{ |i| i.to_s 36}.map(&amp;:upcase)[row] + &#39; &#39;)</code>
+          <code class="ruby">#     (0..@row_count).each do |row|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="170">
           
           
-          <code class="ruby">#       (0..@col_count).each do |col|</code>
+          <code class="ruby">#       print((10...36).map{ |i| i.to_s 36}.map(&amp;:upcase)[row] + &#39; &#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="171">
           
           
-          <code class="ruby">#         if row == cell[0] &amp;&amp; col == cell[1]</code>
+          <code class="ruby">#       (0..@col_count).each do |col|</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="172">
           
           
-          <code class="ruby">#           print(&#39;X &#39;)</code>
+          <code class="ruby">#         if row == cell[0] &amp;&amp; col == cell[1]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="173">
           
           
-          <code class="ruby">#         elsif @board[[row, col]].has_mine?</code>
+          <code class="ruby">#           print(&#39;X &#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="174">
           
           
-          <code class="ruby">#           print(&#39;* &#39;)</code>
+          <code class="ruby">#         elsif @board[[row, col]].has_mine?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="175">
           
           
-          <code class="ruby">#         elsif @board[[row, col]].hidden?</code>
+          <code class="ruby">#           print(&#39;* &#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="176">
           
           
-          <code class="ruby">#           print(&#39;_ &#39;)</code>
+          <code class="ruby">#         elsif @board[[row, col]].hidden?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="177">
           
           
-          <code class="ruby">#         else</code>
+          <code class="ruby">#           print(&#39;_ &#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="178">
           
           
-          <code class="ruby">#           print(@board[[row, col]].count_of_mines_around.to_s + &#39; &#39;)</code>
+          <code class="ruby">#         else</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="179">
           
           
-          <code class="ruby">#         end</code>
+          <code class="ruby">#           print(@board[[row, col]].count_of_mines_around.to_s + &#39; &#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="180">
           
           
-          <code class="ruby">#       end</code>
+          <code class="ruby">#         end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="181">
           
           
-          <code class="ruby">#       print(&quot;\n&quot;)</code>
+          <code class="ruby">#       end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="182">
           
           
-          <code class="ruby">#     end</code>
+          <code class="ruby">#       print(&quot;\n&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="183">
           
           
-          <code class="ruby">#   end</code>
+          <code class="ruby">#     end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="184">
+          
+          
+          <code class="ruby">#   end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="185">
           
           
           <code class="ruby">end</code>

@@ -38,7 +38,6 @@ RSpec.describe Minefield do
       minefield.fill_board_with_zeroes
 
       minefield.board.each do |_key, value|
-        # p value.count_of_mines_around
         expect(value.count_of_mines_around).to eq 0
       end
     end

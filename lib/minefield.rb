@@ -105,21 +105,21 @@ class Minefield
     )
   end
 
-#   # Prints board during game duration
-#   def print_board
-#     print_alphabet
-#     (0..@row_count).each do |row|
-#       print_this_letter(row)
-#       (0..@col_count).each do |col|
-#         if @board[[row, col]].hidden
-#           print('_ ')
-#         else
-#           print(@board[[row, col]].count_of_mines_around.to_s + ' ')
-#         end
-#       end
-#       print("\n")
-#     end
-#   end
+  # Prints board during game duration
+  def print_board
+    print_alphabet
+    (0..@row_count).each do |row|
+      print_this_letter(row)
+      (0..@col_count).each do |col|
+        if @board[[row, col]].hidden
+          print('_ ')
+        else
+          print(@board[[row, col]].count_of_mines_around.to_s + ' ')
+        end
+      end
+      print("\n")
+    end
+  end
 
 #   # first printing
 #   # needed because until first cell selection there is no cell on board

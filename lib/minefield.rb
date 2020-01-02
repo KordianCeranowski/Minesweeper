@@ -60,31 +60,31 @@ class Minefield
   end
 
 
-#   # counts how many cells around selected cell has a mine
-#   def count_mines_around_cell(row, col)
-#     sum = 0
-#     (-1..1).each do |curr_row|
-#       (-1..1).each do |curr_col|
-#         next if curr_row.zero? && curr_col.zero?
+  # counts how many cells around selected cell has a mine
+  def count_mines_around_cell(row, col)
+    sum = 0
+    (-1..1).each do |curr_row|
+      (-1..1).each do |curr_col|
+        next if curr_row.zero? && curr_col.zero?
 
-#         if @board[[row + curr_row, col + curr_col]].has_mine?
-#           sum += 1
-#         end
-#       end
-#     end
-#     sum
-#   end
+        if @board[[row + curr_row, col + curr_col]].has_mine?
+          sum += 1
+        end
+      end
+    end
+    sum
+  end
 
-#   # sets @count_of_mines_around for each cell in board
-#   def count_mines
-#     (0..@row_count).each do |row|
-#       (0..@col_count).each do |col|
-#         unless @board[[row, col]].has_mine
-#           @board[[row, col]].count_of_mines_around = count_mines_around_cell(row, col)
-#         end
-#       end
-#     end
-#   end
+  # sets @count_of_mines_around for each cell in board
+  def count_mines
+    (0..@row_count).each do |row|
+      (0..@col_count).each do |col|
+        unless @board[[row, col]].has_mine
+          @board[[row, col]].count_of_mines_around = count_mines_around_cell(row, col)
+        end
+      end
+    end
+  end
 
 #   # Prints board during game duration
 #   def print_board

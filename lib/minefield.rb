@@ -14,13 +14,13 @@ class Minefield
     @board = Hash.new(Cell.new)
   end
 
-  # # runs all functions needed to starting a game
-  # def prepare_board(excepted_cell)
-  #   fill_board_with_cells
-  #   randomly_plant_bombs(excepted_cell[0], excepted_cell[1])
-  #   fill_board_with_zeroes
-  #   count_mines
-  # end
+  # runs all functions needed to starting a game
+  def prepare_board(excepted_cell)
+    fill_board_with_cells
+    randomly_plant_bombs(excepted_cell[0], excepted_cell[1])
+    fill_board_with_zeroes
+    count_mines
+  end
 
   # sets a cell for every coordinate
   def fill_board_with_cells
@@ -59,7 +59,6 @@ class Minefield
     end
   end
 
-
   # counts how many cells around selected cell has a mine
   def count_mines_around_cell(row, col)
     sum = 0
@@ -80,18 +79,37 @@ class Minefield
     (0..@row_count).each do |row|
       (0..@col_count).each do |col|
         unless @board[[row, col]].has_mine
-          @board[[row, col]].count_of_mines_around = count_mines_around_cell(row, col)
+          @board[[row, col]]
+          .count_of_mines_around = count_mines_around_cell(row, col)
         end
       end
     end
   end
 
+  def print_alphabet
+    print(
+      '  ' + (10...36)
+      .map { |i| i.to_s 36 }
+      .map(&:upcase)[0..col_count]
+      .product([' '])
+      .flatten(1)[0...-1]
+      .join
+    )
+    print("\n")
+  end
+
+  def print_this_letter(number)
+    print(
+      (10...36).map { |i| i.to_s 36 }
+      .map(&:upcase)[number] + ' '
+    )
+  end
+
 #   # Prints board during game duration
 #   def print_board
-#     print('  ' + (10...36).map { |i| i.to_s 36 }.map(&:upcase)[0..col_count].product([' ']).flatten(1)[0...-1].join)
-#     print("\n")
+#     print_alphabet
 #     (0..@row_count).each do |row|
-#       print (10...36).map{ |i| i.to_s 36}.map(&:upcase)[row] + ' '
+#       print_this_letter(row)
 #       (0..@col_count).each do |col|
 #         if @board[[row, col]].hidden
 #           print('_ ')
@@ -103,13 +121,12 @@ class Minefield
 #     end
 #   end
 
-#   # first printing 
+#   # first printing
 #   # needed because until first cell selection there is no cell on board
 #   def print_empty_board
-#     print('  ' + (10...36).map { |i| i.to_s 36 }.map(&:upcase)[0..col_count].product([' ']).flatten(1)[0...-1].join)
-#     print("\n")
+#     print_alphabet
 #     (0..@row_count).each do |row|
-#       print((10...36).map{ |i| i.to_s 36}.map(&:upcase)[row] + ' ')
+#       print((10...36).map { |i| i.to_s 36 }.map(&:upcase)[row] + ' ')
 #       (0..@col_count).each do
 #         print('_ ')
 #       end
@@ -122,7 +139,8 @@ class Minefield
 #     (-1..1).each do |row_diff|
 #       (-1..1).each do |col_diff|
 #         next if row_diff.zero? && col_diff.zero?
-#         if !@board[[row + row_diff, col + col_diff]].hidden? && @board[[row + row_diff, col + col_diff]].count_of_mines_around.zero?
+#         if !@board[[row + row_diff, col + col_diff]].hidden? &&
+#            @board[[row + row_diff, col + col_diff]].count_of_mines_around.zero?
 #           return true
 #         end
 #       end
@@ -163,11 +181,10 @@ class Minefield
 
 #   # shows mines after loosing a game
 #   def print_lost_board(cell)
-#     print '  ' + (10...36).map { |i| i.to_s 36 }.map(&:upcase)[0..col_count].product([' ']).flatten(1)[0...-1].join
-#     print("\n")
+#     print_alphabet
 
 #     (0..@row_count).each do |row|
-#       print((10...36).map{ |i| i.to_s 36}.map(&:upcase)[row] + ' ')
+#       print_this_letter(row)
 #       (0..@col_count).each do |col|
 #         if row == cell[0] && col == cell[1]
 #           print('X ')

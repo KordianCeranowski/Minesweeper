@@ -29,7 +29,7 @@ RSpec.describe Cell do
     it('shows the state of @hidden') do
       cell = Cell.new
       expect(cell.hidden?).to be true
-      cell.plant_bomb
+      cell.show
       expect(cell.hidden?).to be false
     end
   end

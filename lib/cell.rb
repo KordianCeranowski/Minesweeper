@@ -11,6 +11,7 @@ class Cell
 
   def plant_bomb
     @has_mine = true
+    @count_of_mines_around = 9
   end
 
   def show

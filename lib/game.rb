@@ -14,31 +14,35 @@ class Game
     # mines = gets.chomp
 
     # board = Minefield.new(rows, columns, mines)
-    board = Minefield.new(13, 13, 18)
-
+    board = Minefield.new(3, 3, 15)
+# ilość pól od 3 do 26
     round_counter = 1
-    print "\n----------------\n"
-    print "--- ROUND " + round_counter.to_s + " ---"
-    print "\n----------------\n"
+    print "\n----------------------\n"
+    print "--- FIRST ROUND ---"
+    print "\n----------------------\n"
     round_counter += 1
     board.print_empty_board
 
-    print('check field: ')
+    print('Choose field to uncover: ')
     first_field = Game.letters_to_coordinates(gets.chomp)
+    print("\n")
 
     board.prepare_board(first_field)
     board.refresh_visibility
     board.print_board
 
-    
-
+    # game loop
     until board.game_lost
+
+      print('Choose field to uncover: ')
       field = Game.letters_to_coordinates(gets.chomp)
+      print("\n")
+
       board.uncover(field)
       board.refresh_visibility
       if board.game_lost
         print "\n----------------------\n"
-        print "--- ): YOU LOSE :( ---"
+        print "--- ): YOU LOST :( ---"
         print "\n----------------------\n"
         board.print_lost_board(field)
       else

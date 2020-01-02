@@ -7,9 +7,9 @@ class Minefield
   attr_accessor :col_count, :row_count, :mine_count, :board, :game_lost, :alphabet
 
   def initialize(col_count, row_count, mine_percent)
-    @col_count = col_count.to_i
-    @row_count = row_count.to_i
-    @mine_count = @col_count * @row_count * mine_percent.to_i * 0.01
+    @col_count = col_count.to_i - 1
+    @row_count = row_count.to_i - 1
+    @mine_count = col_count.to_i * row_count.to_i * mine_percent.to_i * 0.01
     @game_lost = false
   end
 
@@ -48,12 +48,13 @@ class Minefield
     end
   end
 
-  # sets @count_of_mines_around to zero for all fields in board
-  # could be done in cell constructor i suppose
+  # sets @count_of_mines_around to zero for all cells in board
   def fill_board_with_zeroes
     (1..@row_count).each do |row|
       (1..@col_count).each do |col|
-        @board[[row, col]].count_of_mines_around = 0
+        unless @board[[row, col]].has_mine?
+          @board[[row, col]].count_of_mines_around = 0
+        end
       end
     end
   end
@@ -86,7 +87,7 @@ class Minefield
 
   # Prints board during game duration
   def print_board
-    print "  " + (10...36).map{ |i| i.to_s 36}.map(&:upcase)[0..col_count].product([' ']).flatten(1)[0...-1].join
+    print('  ' + (10...36).map { |i| i.to_s 36 }.map(&:upcase)[0..col_count].product([' ']).flatten(1)[0...-1].join)
     print("\n")
     (0..@row_count).each do |row|
       print (10...36).map{ |i| i.to_s 36}.map(&:upcase)[row] + ' '
@@ -102,21 +103,21 @@ class Minefield
   end
 
   # first printing 
-  # needed because until first field selection there is no fields on board
+  # needed because until first cell selection there is no cell on board
   def print_empty_board
-    print "  " + (10...36).map{ |i| i.to_s 36}.map(&:upcase)[0..col_count].product([' ']).flatten(1)[0...-1].join
+    print('  ' + (10...36).map { |i| i.to_s 36 }.map(&:upcase)[0..col_count].product([' ']).flatten(1)[0...-1].join)
     print("\n")
     (0..@row_count).each do |row|
-      print (10...36).map{ |i| i.to_s 36}.map(&:upcase)[row] + ' '
-      (0..@col_count).each do |col|
+      print((10...36).map{ |i| i.to_s 36}.map(&:upcase)[row] + ' ')
+      (0..@col_count).each do
         print('_ ')
       end
       print("\n")
     end
   end
 
-  # checks one of 8 fields neighbours is a visible zero
-  def has_neighbouring_visible_zero(row, col)
+  # checks one of 8 cells neighbours is a visible zero
+  def neighbouring_visible_zero(row, col)
     (-1..1).each do |row_diff|
       (-1..1).each do |col_diff|
         next if row_diff.zero? && col_diff.zero?
@@ -128,46 +129,46 @@ class Minefield
     false
   end
 
-  # shows all zeroes that should bee visible after uncovering new field
+  # shows all zeroes that should bee visible after uncovering new cell
   def refresh_visibility
     something_changed = true
     while something_changed
       something_changed = false
       (0..@row_count).each do |row|
         (0..@col_count).each do |col|
-          if @board[[row, col]].hidden?
-            if has_neighbouring_visible_zero(row, col)
-              @board[[row, col]].show
-              something_changed = true
-            end
+          next unless @board[[row, col]].hidden?
+
+          if neighbouring_visible_zero(row, col)
+            @board[[row, col]].show
+            something_changed = true
           end
         end
       end
     end
   end
 
-  # unhides the chosen field, then updates game_lost flag
-  def uncover(field)
-    @board[[field[0], field[1]]].show
-    check_for_loosing(field)
+  # unhides the chosen cell, then updates game_lost flag
+  def uncover(cell)
+    @board[[cell[0], cell[1]]].show
+    check_for_loosing(cell)
   end
 
   # sets game_lost flag if one of mines is not hidden
-  def check_for_loosing(field)
-    if @board[[field[0], field[1]]].has_mine?
+  def check_for_loosing(cell)
+    if @board[[cell[0], cell[1]]].has_mine?
       @game_lost = true
     end
   end
 
   # shows mines after loosing a game
-  def print_lost_board(field)
+  def print_lost_board(cell)
     print '  ' + (10...36).map { |i| i.to_s 36 }.map(&:upcase)[0..col_count].product([' ']).flatten(1)[0...-1].join
     print("\n")
 
     (0..@row_count).each do |row|
-      print (10...36).map{ |i| i.to_s 36}.map(&:upcase)[row] + ' '
+      print((10...36).map{ |i| i.to_s 36}.map(&:upcase)[row] + ' ')
       (0..@col_count).each do |col|
-        if row == field[0] && col == field[1]
+        if row == cell[0] && col == cell[1]
           print('X ')
         elsif @board[[row, col]].has_mine?
           print('* ')

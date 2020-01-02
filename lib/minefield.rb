@@ -121,18 +121,18 @@ class Minefield
     end
   end
 
-#   # first printing
-#   # needed because until first cell selection there is no cell on board
-#   def print_empty_board
-#     print_alphabet
-#     (0..@row_count).each do |row|
-#       print((10...36).map { |i| i.to_s 36 }.map(&:upcase)[row] + ' ')
-#       (0..@col_count).each do
-#         print('_ ')
-#       end
-#       print("\n")
-#     end
-#   end
+  # first printing
+  # needed because until first cell selection there is no cell on board
+  def print_empty_board
+    print_alphabet
+    (0..@row_count).each do |row|
+      print((10...36).map { |i| i.to_s 36 }.map(&:upcase)[row] + ' ')
+      (0..@col_count).each do
+        print('_ ')
+      end
+      print("\n")
+    end
+  end
 
 #   # checks one of 8 cells neighbours is a visible zero
 #   def neighbouring_visible_zero(row, col)

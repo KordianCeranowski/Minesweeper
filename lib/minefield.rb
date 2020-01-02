@@ -2,7 +2,7 @@
 
 require_relative 'cell'
 
-# Class for keeping game minefield
+# class for keeping and printing game board
 class Minefield
   attr_accessor :col_count, :row_count, :mine_count, :board, :game_lost, :alphabet
 
@@ -13,6 +13,7 @@ class Minefield
     @game_lost = false
   end
 
+  # runs all functions needed to starting a game
   def prepare_board(excepted_cell)
     fill_board_with_cells
     randomly_plant_bombs(excepted_cell[0], excepted_cell[1])
@@ -20,15 +21,18 @@ class Minefield
     count_mines
   end
 
+  # sets a cell for every coordinate
   def fill_board_with_cells
     @board = Hash.new(Cell.new)
-    (0..@row_count - 1).each do |row|
-      (0..@col_count - 1).each do |col|
+    (0..@row_count).each do |row|
+      (0..@col_count).each do |col|
         @board[[row, col]] = Cell.new
       end
     end
   end
 
+  # plants bombs randomly, excepting selected cell
+  # so player wouldn't loose on the first try
   def randomly_plant_bombs(excepted_row, excepted_col)
     bombs_planted = 0
     @board[[excepted_row, excepted_col]].show
@@ -44,6 +48,8 @@ class Minefield
     end
   end
 
+  # sets @count_of_mines_around to zero for all fields in board
+  # could be done in cell constructor i suppose
   def fill_board_with_zeroes
     (1..@row_count).each do |row|
       (1..@col_count).each do |col|
@@ -52,6 +58,7 @@ class Minefield
     end
   end
 
+  # counts how many cells around selected cell has a mine
   def count_mines_around_cell(row, col)
     sum = 0
     (-1..1).each do |curr_row|
@@ -66,9 +73,10 @@ class Minefield
     sum
   end
 
+  # sets @count_of_mines_around for each cell in board
   def count_mines
-    (0..@row_count - 1).each do |row|
-      (0..@col_count - 1).each do |col|
+    (0..@row_count).each do |row|
+      (0..@col_count).each do |col|
         unless @board[[row, col]].has_mine
           @board[[row, col]].count_of_mines_around = count_mines_around_cell(row, col)
         end
@@ -76,13 +84,13 @@ class Minefield
     end
   end
 
-  #do faktycznej gry
+  # Prints board during game duration
   def print_board
     print "  " + (10...36).map{ |i| i.to_s 36}.map(&:upcase)[0..col_count].product([' ']).flatten(1)[0...-1].join
     print("\n")
-    (0..@row_count - 1).each do |row|
-      print (10...36).map{ |i| i.to_s 36}.map(&:upcase)[row] + " "
-      (0..@col_count - 1).each do |col|
+    (0..@row_count).each do |row|
+      print (10...36).map{ |i| i.to_s 36}.map(&:upcase)[row] + ' '
+      (0..@col_count).each do |col|
         if @board[[row, col]].hidden
           print('_ ')
         else
@@ -93,27 +101,21 @@ class Minefield
     end
   end
 
-  # pierwsze drukowanie
+  # first printing 
+  # needed because until first field selection there is no fields on board
   def print_empty_board
     print "  " + (10...36).map{ |i| i.to_s 36}.map(&:upcase)[0..col_count].product([' ']).flatten(1)[0...-1].join
     print("\n")
-    (0..@row_count - 1).each do |row|
-      print (10...36).map{ |i| i.to_s 36}.map(&:upcase)[row] + " "
-      (0..@col_count - 1).each do
+    (0..@row_count).each do |row|
+      print (10...36).map{ |i| i.to_s 36}.map(&:upcase)[row] + ' '
+      (0..@col_count).each do |col|
         print('_ ')
       end
       print("\n")
     end
   end
 
-  def has_neighbouring_visible_zero2(row, col)
-    if !@board[[row + 1, col]].hidden? && @board[[row + 1, col]].count_of_mines_around.zero? then return true end
-    if !@board[[row - 1, col]].hidden? && @board[[row - 1, col]].count_of_mines_around.zero? then return true end
-    if !@board[[row, col + 1]].hidden? && @board[[row, col + 1]].count_of_mines_around.zero? then return true end
-    if !@board[[row, col - 1]].hidden? && @board[[row, col - 1]].count_of_mines_around.zero? then return true end
-    false
-  end
-
+  # checks one of 8 fields neighbours is a visible zero
   def has_neighbouring_visible_zero(row, col)
     (-1..1).each do |row_diff|
       (-1..1).each do |col_diff|
@@ -126,12 +128,13 @@ class Minefield
     false
   end
 
+  # shows all zeroes that should bee visible after uncovering new field
   def refresh_visibility
     something_changed = true
     while something_changed
       something_changed = false
-      (0..@row_count - 1).each do |row|
-        (0..@col_count - 1).each do |col|
+      (0..@row_count).each do |row|
+        (0..@col_count).each do |col|
           if @board[[row, col]].hidden?
             if has_neighbouring_visible_zero(row, col)
               @board[[row, col]].show
@@ -143,27 +146,27 @@ class Minefield
     end
   end
 
+  # unhides the chosen field, then updates game_lost flag
   def uncover(field)
     @board[[field[0], field[1]]].show
     check_for_loosing(field)
   end
 
+  # sets game_lost flag if one of mines is not hidden
   def check_for_loosing(field)
     if @board[[field[0], field[1]]].has_mine?
       @game_lost = true
     end
   end
 
-  # odsłania miny, na zakończenie gry
+  # shows mines after loosing a game
   def print_lost_board(field)
-
-
-    print "  " + (10...36).map { |i| i.to_s 36 }.map(&:upcase)[0..col_count].product([' ']).flatten(1)[0...-1].join
+    print '  ' + (10...36).map { |i| i.to_s 36 }.map(&:upcase)[0..col_count].product([' ']).flatten(1)[0...-1].join
     print("\n")
 
-    (0..@row_count - 1).each do |row|
-      print (10...36).map{ |i| i.to_s 36}.map(&:upcase)[row] + " "
-      (0..@col_count - 1).each do |col|
+    (0..@row_count).each do |row|
+      print (10...36).map{ |i| i.to_s 36}.map(&:upcase)[row] + ' '
+      (0..@col_count).each do |col|
         if row == field[0] && col == field[1]
           print('X ')
         elsif @board[[row, col]].has_mine?
@@ -171,11 +174,10 @@ class Minefield
         elsif @board[[row, col]].hidden?
           print('_ ')
         else
-          print(@board[[row, col]].count_of_mines_around.to_s + " ")
+          print(@board[[row, col]].count_of_mines_around.to_s + ' ')
         end
       end
       print("\n")
     end
   end
-
 end

@@ -25,4 +25,20 @@ RSpec.describe Cell do
       expect(cell.has_mine).to be true
     end
   end
+  describe '.hidden?' do
+    it('shows the state of @hidden') do
+      cell = Cell.new
+      expect(cell.hidden?).to be true
+      cell.plant_bomb
+      expect(cell.hidden?).to be false
+    end
+  end
+  describe '.has_mine?' do
+    it('shows the state of @hidden') do
+      cell = Cell.new
+      expect(cell.has_mine?).to be false
+      cell.plant_bomb
+      expect(cell.has_mine?).to be true
+    end
+  end
 end

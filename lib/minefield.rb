@@ -147,18 +147,18 @@ class Minefield
 #     end
 #   end
 
-  # # unhides the chosen cell, then updates game_lost flag
-  # def uncover(cell)
-  #   @board[[cell[0], cell[1]]].show
-  #   check_for_loosing(cell)
-  # end
+  # unhides the chosen cell, then updates game_lost flag
+  def uncover(cell)
+    @board[[cell[0], cell[1]]].show
+    check_for_loosing(cell)
+  end
 
-  # # sets game_lost flag if one of mines is not hidden
-  # def check_for_loosing(cell)
-  #   if @board[[cell[0], cell[1]]].has_mine?
-  #     @game_lost = true
-  #   end
-  # end
+  # sets game_lost flag if one of mines is not hidden
+  def check_for_loosing(cell)
+    if @board[[cell[0], cell[1]]].has_mine?
+      @game_lost = true
+    end
+  end
 
 #   # shows mines after loosing a game
 #   def print_lost_board(cell)

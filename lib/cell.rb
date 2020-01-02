@@ -17,11 +17,11 @@ class Cell
     @hidden = false
   end
 
-  # def hidden?
-  #   hidden
-  # end
+  def hidden?
+    hidden
+  end
 
-  # def has_mine?
-  #   has_mine
-  # end
+  def has_mine?
+    has_mine
+  end
 end

@@ -90,6 +90,33 @@ RSpec.describe Minefield do
     end
   end
 
+
+  describe '.count_mines' do
+    minefield = Minefield.new(3, 3, 0)
+    minefield.fill_board_with_cells
+    minefield.fill_board_with_zeroes
+
+    minefield.board[[0, 0]].plant_bomb
+    minefield.board[[2, 2]].plant_bomb
+    minefield.count_mines
+    context 'before choosing a cell' do
+      it 'prints empty board' do
+        expect { minefield.print_board }
+        .to output("  A B C\nA _ _ _ \nB _ _ _ \nC _ _ _ \n")
+        .to_stdout
+      end
+    end
+    context 'after choosing a cell' do
+      it 'shows number on this cell' do
+        minefield.uncover([1, 1])
+        expect { minefield.print_board }
+        .to output("  A B C\nA _ _ _ \nB _ 2 _ \nC _ _ _ \n")
+        .to_stdout
+      end
+    end
+  end
+
+
   describe '.uncover' do
     it 'changes @game_lost to true after unocovering cell with bomb by mocking cell' do
       minefield = Minefield.new(10, 10, 15)

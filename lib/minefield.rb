@@ -99,7 +99,7 @@ class Minefield
     print("\n")
     (0..@row_count - 1).each do |row|
       print (10...36).map{ |i| i.to_s 36}.map(&:upcase)[row] + " "
-      (0..@col_count - 1).each do |col|
+      (0..@col_count - 1).each do
         print('_ ')
       end
       print("\n")

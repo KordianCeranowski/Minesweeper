@@ -70,6 +70,26 @@ RSpec.describe Minefield do
     end
   end
 
+  describe '.print_alphabet' do
+    it 'prints alphabet with spaces' do
+      expect {
+        Minefield.new(0, 0, 0).print_alphabet
+      }
+        .to output("  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z\n")
+        .to_stdout
+    end
+  end
+
+  describe '.print_this_letter' do
+    it 'prints chosen letter of english alphabet' do
+      minefield = Minefield.new(0, 0, 0)
+      expect { minefield.print_this_letter(0) }.to output('A ').to_stdout
+      expect { minefield.print_this_letter(1) }.to output('B ').to_stdout
+      expect { minefield.print_this_letter(2) }.to output('C ').to_stdout
+      expect { minefield.print_this_letter(25) }.to output('Z ').to_stdout
+    end
+  end
+
   describe '.uncover' do
     it 'changes @game_lost to true after unocovering cell with bomb by mocking cell' do
       minefield = Minefield.new(10, 10, 15)

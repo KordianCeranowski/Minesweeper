@@ -112,7 +112,9 @@ class Minefield
       print_this_letter(row)
       (0..@col_count).each do |col|
         if @board[[row, col]].hidden
-          print('_ ')
+          print '_ '
+        elsif @board[[row, col]].count_of_mines_around.zero?
+          print '  '
         else
           print(@board[[row, col]].count_of_mines_around.to_s + ' ')
         end
@@ -182,7 +184,6 @@ class Minefield
   # shows mines after loosing a game
   def print_lost_board(cell)
     print_alphabet
-
     (0..@row_count).each do |row|
       print_this_letter(row)
       (0..@col_count).each do |col|
@@ -192,6 +193,8 @@ class Minefield
           print('* ')
         elsif @board[[row, col]].hidden?
           print('_ ')
+        elsif @board[[row, col]].count_of_mines_around.zero?
+          print '  '
         else
           print(@board[[row, col]].count_of_mines_around.to_s + ' ')
         end

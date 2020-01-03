@@ -134,19 +134,19 @@ class Minefield
     end
   end
 
-#   # checks one of 8 cells neighbours is a visible zero
-#   def neighbouring_visible_zero(row, col)
-#     (-1..1).each do |row_diff|
-#       (-1..1).each do |col_diff|
-#         next if row_diff.zero? && col_diff.zero?
-#         if !@board[[row + row_diff, col + col_diff]].hidden? &&
-#            @board[[row + row_diff, col + col_diff]].count_of_mines_around.zero?
-#           return true
-#         end
-#       end
-#     end
-#     false
-#   end
+  # checks one of 8 cells neighbours is a visible zero
+  def neighbouring_visible_zero(row, col)
+    (-1..1).each do |row_diff|
+      (-1..1).each do |col_diff|
+        next if row_diff.zero? && col_diff.zero?
+        if !@board[[row + row_diff, col + col_diff]].hidden? &&
+           @board[[row + row_diff, col + col_diff]].count_of_mines_around.zero?
+          return true
+        end
+      end
+    end
+    false
+  end
 
 #   # shows all zeroes that should bee visible after uncovering new cell
 #   def refresh_visibility

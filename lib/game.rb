@@ -8,10 +8,7 @@ class Game
 
   def self.start
     @board = Minefield.new(13, 13, 15)
-
-    print "\n----------------------\n"
-    print "--- FIRST ROUND ---"
-    print "\n----------------------\n"
+    @round_counter = 1
     @board.print_empty_board
 
     print('Choose field to uncover: ')
@@ -26,7 +23,6 @@ class Game
   end
 
   def self.loop_game
-    round_counter = 2
     until @board.game_lost
       field = Game.read_coordinates
       @board.uncover(field)
@@ -34,16 +30,16 @@ class Game
       if @board.game_lost
         Game.lose(field)
       else
-        Game.continue_playing(round_counter)
+        Game.continue_playing
       end
     end
   end
 
-  def self.continue_playing(round_counter)
+  def self.continue_playing
     print "\n----------------\n"
-    print '--- ROUND ' + round_counter.to_s + ' ---'
+    print '--- ROUND ' + @round_counter.to_s + ' ---'
     print "\n----------------\n"
-    round_counter += 1
+    @round_counter += 1
     @board.print_board
   end
 

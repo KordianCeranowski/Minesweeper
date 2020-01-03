@@ -196,10 +196,23 @@ RSpec.describe Minefield do
         minefield = Minefield.new(5, 5, 0)
         minefield.prepare_board([0, 0])
         minefield.uncover([0, 0])
+        minefield.game_lost = true
         expect {
           minefield.print_lost_board([0, 0])
         }
           .to output("  A B C D E\nA X _ _ _ _ \nB _ _ _ _ _ \nC _ _ _ _ _ \nD _ _ _ _ _ \nE _ _ _ _ _ \n")
+          .to_stdout
+      end
+      it 'prints random board without errors using all signs' do
+        minefield = Minefield.new(15, 15, 20)
+        minefield.prepare_board([0, 0])
+        minefield.board[[1, 1]].count_of_mines_around = 0
+        minefield.board[[1, 1]].has_mine = false
+        minefield.uncover([1, 1])
+        minefield.refresh_visibility
+        minefield.game_lost = true
+        expect { minefield.print_lost_board([0, 0]) }
+          .not_to output('')
           .to_stdout
       end
     end

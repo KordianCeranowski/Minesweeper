@@ -148,23 +148,23 @@ class Minefield
     false
   end
 
-#   # shows all zeroes that should bee visible after uncovering new cell
-#   def refresh_visibility
-#     something_changed = true
-#     while something_changed
-#       something_changed = false
-#       (0..@row_count).each do |row|
-#         (0..@col_count).each do |col|
-#           next unless @board[[row, col]].hidden?
+  # shows all zeroes that should bee visible after uncovering new cell
+  def refresh_visibility
+    something_changed = true
+    while something_changed
+      something_changed = false
+      (0..@row_count).each do |row|
+        (0..@col_count).each do |col|
+          next unless @board[[row, col]].hidden?
 
-#           if neighbouring_visible_zero(row, col)
-#             @board[[row, col]].show
-#             something_changed = true
-#           end
-#         end
-#       end
-#     end
-#   end
+          if neighbouring_visible_zero(row, col)
+            @board[[row, col]].show
+            something_changed = true
+          end
+        end
+      end
+    end
+  end
 
   # unhides the chosen cell, then updates game_lost flag
   def uncover(cell)

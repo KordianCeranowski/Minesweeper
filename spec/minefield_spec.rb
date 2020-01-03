@@ -157,6 +157,20 @@ RSpec.describe Minefield do
     end
   end
 
+  describe '.refresh_visibility' do
+    context 'while there are visible zeroes' do
+      it 'some cells recive :show' do
+        minefield = Minefield.new(1, 2, 0)
+        minefield.board[[0, 0]] = Cell.new
+        minefield.board[[0, 1]] = Cell.new
+        minefield.board[[0, 1]].count_of_mines_around = 0
+        minefield.board[[0, 1]].show
+
+        minefield.refresh_visibility
+        expect(minefield.board[[0, 0]].hidden).to be false
+      end
+    end
+  end
 
   describe '.uncover' do
     it 'changes @game_lost to true after uncovering cell with a bomb' do

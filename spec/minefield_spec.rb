@@ -126,18 +126,49 @@ RSpec.describe Minefield do
     end
   end
 
+  describe '.neighbouring_visible_zero' do
+    context 'while there are visible zeroes' do
+      it 'returns true' do
+        mock_cell = instance_double('Cell')
+        minefield = Minefield.new(1, 2, 0);
+
+        minefield.board[[0, 0]] = mock_cell
+        minefield.board[[0, 1]] = Cell.new
+        minefield.board[[0, 1]].count_of_mines_around = 0
+        minefield.board[[0, 1]].show
+
+        function_output = minefield.neighbouring_visible_zero(0, 0)
+
+        expect(function_output).to be true
+      end
+    end
+    context 'while there are no visible zeroes' do
+      it 'returns true' do
+        mock_cell = instance_double('Cell')
+        minefield = Minefield.new(1, 2, 0);
+
+        minefield.board[[0, 0]] = mock_cell
+        minefield.board[[0, 1]] = Cell.new
+
+        function_output = minefield.neighbouring_visible_zero(0, 0)
+
+        expect(function_output).to be false
+      end
+    end
+  end
+
 
   describe '.uncover' do
-    it 'changes @game_lost to true after unocovering cell with bomb by mocking cell' do
+    it 'changes @game_lost to true after uncovering cell with a bomb' do
       minefield = Minefield.new(10, 10, 15)
 
       expect(minefield.game_lost).to be false
 
-      cell = instance_double('Cell')
-      allow(cell).to receive(:show)
-      allow(cell).to receive(:has_mine?).and_return(true)
+      mock_cell = instance_double('Cell')
+      allow(mock_cell).to receive(:show)
+      allow(mock_cell).to receive(:has_mine?).and_return(true)
 
-      minefield.board[[1, 1]] = cell
+      minefield.board[[1, 1]] = mock_cell
 
       minefield.uncover([1, 1])
 

@@ -189,4 +189,19 @@ RSpec.describe Minefield do
       expect(minefield.game_lost).to be true
     end
   end
+
+  describe '.print_lost_board' do
+    context 'after setting @game_lost to true' do
+      it 'prints whole map with mines visible' do
+        minefield = Minefield.new(5, 5, 0)
+        minefield.prepare_board([0, 0])
+        minefield.uncover([0, 0])
+        expect {
+          minefield.print_lost_board([0, 0])
+        }
+          .to output("  A B C D E\nA X _ _ _ _ \nB _ _ _ _ _ \nC _ _ _ _ _ \nD _ _ _ _ _ \nE _ _ _ _ _ \n")
+          .to_stdout
+      end
+    end
+  end
 end

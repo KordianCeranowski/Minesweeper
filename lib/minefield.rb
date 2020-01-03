@@ -179,24 +179,24 @@ class Minefield
     end
   end
 
-#   # shows mines after loosing a game
-#   def print_lost_board(cell)
-#     print_alphabet
+  # shows mines after loosing a game
+  def print_lost_board(cell)
+    print_alphabet
 
-#     (0..@row_count).each do |row|
-#       print_this_letter(row)
-#       (0..@col_count).each do |col|
-#         if row == cell[0] && col == cell[1]
-#           print('X ')
-#         elsif @board[[row, col]].has_mine?
-#           print('* ')
-#         elsif @board[[row, col]].hidden?
-#           print('_ ')
-#         else
-#           print(@board[[row, col]].count_of_mines_around.to_s + ' ')
-#         end
-#       end
-#       print("\n")
-#     end
-#   end
+    (0..@row_count).each do |row|
+      print_this_letter(row)
+      (0..@col_count).each do |col|
+        if row == cell[0] && col == cell[1]
+          print('X ')
+        elsif @board[[row, col]].has_mine?
+          print('* ')
+        elsif @board[[row, col]].hidden?
+          print('_ ')
+        else
+          print(@board[[row, col]].count_of_mines_around.to_s + ' ')
+        end
+      end
+      print("\n")
+    end
+  end
 end
